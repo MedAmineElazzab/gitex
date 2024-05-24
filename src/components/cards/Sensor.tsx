@@ -10,7 +10,10 @@ interface SensorCardProps {
   chart: IconType;
   description: string;
   unit: EnumUnit;
-  success: boolean; // Added success prop
+  success: boolean;
+  iconColor: string;
+  chartColor: string;
+  spanColor: string;
   className?: string;
 }
 
@@ -23,11 +26,15 @@ const Sensor: React.FC<SensorCardProps> = ({
   description,
   unit,
   success,
+  iconColor = "#25B865", // Default icon color
+  chartColor = "#25B865", // Default chart color
+  spanColor = "#09BD3C", // Default span color
   className = "",
 }) => {
   const Icon = icon;
   const Chart = chart;
-  const bgColor = success ? "#E9F8F0" : "#FC2E53";
+  const bgColor = success ? "#E9F8F0" : "#FBEFF1";
+  const sign = success ? "+" : "-";
 
   return (
     <div className={`flex bg-white h-auto rounded-2xl ${className}`}>
@@ -39,8 +46,12 @@ const Sensor: React.FC<SensorCardProps> = ({
           <span>{number}</span>
         </div>
         <div className="-mt-3">
-          <span className="text-[#09BD3C] text-xs font-display font-bold">
-            +{porsontage}
+          <span
+            className={`text-xs font-display font-bold`}
+            style={{ color: spanColor }}
+          >
+            {sign}
+            {porsontage}
             {unit}
           </span>
           <span className="text-[#111C44] text-xs font-display font-light">
@@ -53,10 +64,16 @@ const Sensor: React.FC<SensorCardProps> = ({
           className="flex rounded-full size-14"
           style={{ backgroundColor: bgColor }}
         >
-          <Icon className="text-[#25B865] mx-auto mt-4 w-5 h-5 border-2 border-[#25B865] rounded-md" />
+          <Icon
+            className="mx-auto mt-4 w-5 h-5 border-2 rounded-md"
+            style={{ color: iconColor, borderColor: iconColor }}
+          />
         </div>
         <div className="w-20">
-          <Chart className="text-[#25B865] mx-auto mt-4 w-20 h-10" />
+          <Chart
+            className="mx-auto mt-4 w-20 h-10"
+            style={{ color: chartColor }}
+          />
         </div>
       </div>
     </div>

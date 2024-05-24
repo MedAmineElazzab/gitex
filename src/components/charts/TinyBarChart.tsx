@@ -37,11 +37,13 @@ const Example: React.FC<ExampleProps> = ({
           interval={0}
           textAnchor="center"
           style={{
-            fontSize: "12px",
+            fontSize: "10px",
             fill: "#B5B5BB",
+            display: "flex",
             justifyContent: "center",
             marginLeft: "30px",
             textTransform: "capitalize",
+            alignItems: "center",
             letterSpacing: "0.1px",
             lineHeight: "15px",
             fontWeight: 500,

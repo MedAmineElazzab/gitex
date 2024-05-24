@@ -62,6 +62,10 @@ const data = [
     icon: MdDone,
     unit: EnumUnit.PERCENTAGE,
     chart: MdOutlineShowChart,
+    chartColor: "#25B865",
+    spanColor: "#09BD3C",
+    iconColor: "#25B865",
+    success: true,
   },
   {
     title: "Inactive sensors",
@@ -71,6 +75,10 @@ const data = [
     icon: AiOutlineInfo,
     unit: EnumUnit.PERCENTAGE,
     chart: MdOutlineShowChart,
+    chartColor: "#FC2E53",
+    spanColor: "#FC2E53",
+    iconColor: "#FC2E53",
+    success: false,
   },
 ];
 
@@ -96,10 +104,12 @@ const zone = [
 ];
 
 const zoneData = [
-  { name: "Zone 3", amt: 400, pv: 2400, uv: 2400 },
-  { name: "Zone 2", amt: 300, pv: 2400, uv: 2400 },
-  { name: "Zone 1", amt: 200, pv: 2400, uv: 2400 },
-  { name: "Zone 0", amt: 100, pv: 2400, uv: 2400 },
+  { name: "Zone 1", amt: 400, pv: 200, uv: 2000 },
+  { name: "Zone 2", amt: 300, pv: 2400, uv: 1400 },
+  { name: "Zone 3", amt: 200, pv: 2400, uv: 2200 },
+  { name: "Zone 4", amt: 100, pv: 2400, uv: 1100 },
+  { name: "Zone 5", amt: 100, pv: 2400, uv: 1500 },
+  { name: "Zone 6", amt: 100, pv: 2400, uv: 2000 },
 ];
 
 const air = [
@@ -121,11 +131,16 @@ const co2 = [
     icon: MdOutlineCo2,
   },
 ];
+const Codata = [
+  { name: "Zone 3", value: 400 },
+  { name: "Zone 2", value: 600 },
+  { name: "Zone 1", value: 600 },
+];
 
 const Dashboard: React.FC = () => {
   return (
     <>
-      <div className="grid grid-cols-1 w-full xl:grid-cols-4 lg:grid-cols-2 gap-5 justify-items-center">
+      <div className="grid grid-cols-1 w-full xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 gap-5 justify-items-center">
         {sensors.map((sensor, index) => (
           <div key={index}>
             <SensorCard
@@ -139,9 +154,10 @@ const Dashboard: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className="w-auto h-[365px] rounded-lg grid grid-cols-3 gap-5 mt-5">
-        <div className="grid col-span-2 bg-[#252736] rounded-xl ">
+      <div className="w-full rounded-lg grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-5 mt-5">
+        <div className="grid xl:col-span-2 col-auto bg-[#252736] rounded-xl ">
           <LineChart
+            height={300}
             color="#FD676A"
             data={[
               { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
@@ -156,11 +172,11 @@ const Dashboard: React.FC = () => {
             ref={undefined}
           />
         </div>
-        <div className="grid grid-rows-2 col-span-1 bg-[#252736] rounded-xl gap-5 p-5">
+        <div className="grid grid-rows-2 xl:col-span-1 col-auto bg-[#252736] rounded-xl gap-5 p-5">
           {data.map((data, index) => (
             <div key={index}>
               <Sensor
-                success
+                success={data.success}
                 icon={data.icon}
                 title={data.title}
                 number={data.number}
@@ -168,13 +184,16 @@ const Dashboard: React.FC = () => {
                 chart={data.chart}
                 description={data.description}
                 unit={data.unit}
+                chartColor={data.chartColor}
+                iconColor={data.iconColor}
+                spanColor={data.spanColor}
               />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 w-full xl:grid-cols-4 mt-4 lg:grid-cols-2 gap-4 justify-items-center bg-[#252736] p-5 rounded-lg">
+      <div className="grid grid-cols-1 w-full xl:grid-cols-4 md:grid-cols-2 mt-4 lg:grid-cols-2 gap-5 justify-items-center bg-[#252736] p-5 rounded-lg">
         <Proximity
           icon={proximity[0].icon}
           title={proximity[0].title}
@@ -186,6 +205,7 @@ const Dashboard: React.FC = () => {
           description={proximity[0].description}
           unit={EnumUnit.PERCENTAGE}
           iconColor="#FD676A"
+          buttonColor="bg-gradient-to-t from-[#FD676A] to-[#E24246]"
         />
 
         <Zone
@@ -210,12 +230,18 @@ const Dashboard: React.FC = () => {
           number1={air[0].number1}
           time={air[0].time}
           quality={air[0].quality}
+          BgColor="#724849"
+          ProgressColor="#FD676A"
+          iconColor="#FD676A"
         />
 
         <CoSensor
           title={co2[0].title}
           icon={co2[0].icon}
           menu={PiDotsThreeBold}
+          iconColor="#FD676A"
+          data={Codata}
+          color={["#FD676A", "#E24246", "#724849"]}
         />
       </div>
     </>

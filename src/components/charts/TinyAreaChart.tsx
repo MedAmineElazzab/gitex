@@ -52,7 +52,6 @@ interface ExampleProps {
 }
 
 export default class Example extends PureComponent<ExampleProps> {
-  static demoUrl = "https://codesandbox.io/p/sandbox/tiny-area-chart-gq23nh";
 
   static defaultProps = {
     strokeColor: "#01B574",
@@ -63,7 +62,7 @@ export default class Example extends PureComponent<ExampleProps> {
     const { strokeColor, fillColor } = this.props;
 
     return (
-      <ResponsiveContainer width="100%" height="40%">
+      <ResponsiveContainer width="100%" height="60%">
         <AreaChart
           width={100}
           height={30}

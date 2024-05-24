@@ -13,6 +13,9 @@ interface AirCardProps {
   quality?: string;
   time1?: string;
   number1?: number;
+  BgColor: string;
+  ProgressColor: string;
+  iconColor: string;
 }
 
 const AirQuality: React.FC<AirCardProps> = ({
@@ -25,6 +28,9 @@ const AirQuality: React.FC<AirCardProps> = ({
   quality,
   time1,
   number1,
+  BgColor,
+  ProgressColor,
+  iconColor = "",
 }) => {
   const Icon = icon;
   return (
@@ -32,9 +38,9 @@ const AirQuality: React.FC<AirCardProps> = ({
       <div className="flex justify-start items-center h-[30%]">
         <div className="bg-[#1E1D2A] size-[70px] rounded-full col-span-1 ">
           <Icon
-            className="text-[#FD676A]
-             mx-auto mt-4 w-10 h-10 shadow-black rounded-full
+            className="mx-auto mt-4 w-10 h-10 shadow-black rounded-full
           "
+            style={{ color: iconColor }}
           />
         </div>
         <span className="text-lg col-span-2 font-normal font-display text-[#B7B7B7] w-[40%]">
@@ -51,7 +57,11 @@ const AirQuality: React.FC<AirCardProps> = ({
             {number} {unit}
           </span>
         </div>
-        <Progress percentage={80} bgColor="#724849" progressColor="#FD676A" />
+        <Progress
+          percentage={80}
+          bgColor={BgColor}
+          progressColor={ProgressColor}
+        />
       </div>
       <div className="h-[60%] ">
         <div className="flex justify-between">
@@ -63,11 +73,18 @@ const AirQuality: React.FC<AirCardProps> = ({
             {number1} {unit}
           </span>
         </div>
-        <Progress percentage={80} bgColor="#724849" progressColor="#FD676A" />
+        <Progress
+          percentage={80}
+          bgColor={BgColor}
+          progressColor={ProgressColor}
+        />
       </div>
       <div className="flex justify-between items-center">
         <p className="font-bold text-sm font-display">{name}</p>
-        <button className="border border-[#EE5D50] px-8 rounded-full text-[#EE5D50] text-[10px]">
+        <button
+          className="border border-[#EE5D50] px-8 py-1 rounded-full text-[#EE5D50] text-[10px]"
+          style={{ borderColor: iconColor, color: iconColor }}
+        >
           {quality}
         </button>
       </div>

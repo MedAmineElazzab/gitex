@@ -13,17 +13,18 @@ import {
 interface ExampleProps {
   data: Array<{ name: string; uv: number; pv: number; amt: number }>;
   color: string;
+  height: number; // Add height prop
 }
 
 export default class Example extends PureComponent<ExampleProps> {
   render() {
-    const { data, color } = this.props;
+    const { data, color, height } = this.props;
 
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height={height}>
         <LineChart
-          width={500}
-          height={300}
+          width={500} 
+          height={300} 
           data={data}
           margin={{
             top: 5,

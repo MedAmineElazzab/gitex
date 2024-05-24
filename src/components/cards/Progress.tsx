@@ -2,8 +2,8 @@ import React from "react";
 
 interface ProgressProps {
   percentage: number;
-  progressColor: string;
-  bgColor: string;
+  progressColor: string | undefined;
+  bgColor: string | undefined;
 }
 
 const Progress: React.FC<ProgressProps> = ({
