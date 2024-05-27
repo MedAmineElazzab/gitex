@@ -19,10 +19,14 @@ const Example: React.FC<ExampleProps> = ({
   cellFill,
   selectedCellFill,
 }) => {
-  const [selectedBarIndex, setSelectedBarIndex] = useState<number | null>(null);
+  const [hoveredBarIndex, setHoveredBarIndex] = useState<number | null>(null);
 
-  const handleBarClick = (index: number) => {
-    setSelectedBarIndex(index);
+  const handleMouseEnter = (index: number) => {
+    setHoveredBarIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredBarIndex(null);
   };
 
   return (
@@ -55,11 +59,46 @@ const Example: React.FC<ExampleProps> = ({
           {data.map((entry, index) => (
             <Cell
               key={`cell-${index}`}
-              fill={index === selectedBarIndex ? selectedCellFill : cellFill}
-              onClick={() => handleBarClick(index)}
+              fill={index === hoveredBarIndex ? selectedCellFill : cellFill}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
             />
           ))}
         </Bar>
+        <Tooltip
+          cursor={{ fill: "transparent" }}
+          contentStyle={{
+            background: "fff",
+            border: "none",
+            borderRadius: "5px",
+            boxShadow: "4px 4px 4px 4px rgba(0, 0, 0, 0.25)",
+            fontSize: "10px",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            paddingTop: "5px",
+            paddingBottom: "3px",
+          }}
+          labelStyle={{
+            color: selectedCellFill,
+            fontSize: "6px",
+            lineHeight: "6px",
+            fontWeight: 300,
+          }}
+          itemStyle={{
+            color: selectedCellFill,
+            fontSize: "6px",
+            lineHeight: "6px",
+            fontWeight: 500,
+          }}
+          wrapperStyle={{
+            border: "none",
+            borderRadius: "0",
+            boxShadow: "none",
+            color: "#B5B5BB",
+            fontSize: "10px",
+            padding: "0",
+          }}
+        />
       </BarChart>
     </ResponsiveContainer>
   );

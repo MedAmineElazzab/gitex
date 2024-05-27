@@ -23,8 +23,8 @@ export default class Example extends PureComponent<ExampleProps> {
     return (
       <ResponsiveContainer width="100%" height={height}>
         <LineChart
-          width={500} 
-          height={300} 
+          width={500}
+          height={300}
           data={data}
           margin={{
             top: 5,
@@ -42,7 +42,41 @@ export default class Example extends PureComponent<ExampleProps> {
           <CartesianGrid stroke="#363846" vertical={false} />
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          <Tooltip
+            cursor={{ fill: "transparent" }}
+            contentStyle={{
+              background: "fff",
+              border: "none",
+              borderRadius: "5px",
+
+              boxShadow: "4px 4px 4px 4px rgba(0, 0, 0, 0.25)",
+              fontSize: "10px",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+              paddingTop: "5px",
+              paddingBottom: "3px",
+            }}
+            labelStyle={{
+              color: color,
+              fontSize: "6px",
+              lineHeight: "6px",
+              fontWeight: 300,
+            }}
+            itemStyle={{
+              color: color,
+              fontSize: "6px",
+              lineHeight: "6px",
+              fontWeight: 500,
+            }}
+            wrapperStyle={{
+              border: "none",
+              borderRadius: "0",
+              boxShadow: "none",
+              color: "#B5B5BB",
+              fontSize: "10px",
+              padding: "0",
+            }}
+          />
           <Line
             type="monotone"
             dataKey="pv"
