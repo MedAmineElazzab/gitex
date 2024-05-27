@@ -80,14 +80,14 @@ const Example: React.FC<ExampleProps> = ({
           }}
           labelStyle={{
             color: selectedCellFill,
-            fontSize: "6px",
-            lineHeight: "6px",
+            fontSize: "8px",
+            lineHeight: "8px",
             fontWeight: 300,
           }}
           itemStyle={{
             color: selectedCellFill,
-            fontSize: "6px",
-            lineHeight: "6px",
+            fontSize: "8px",
+            lineHeight: "8px",
             fontWeight: 500,
           }}
           wrapperStyle={{

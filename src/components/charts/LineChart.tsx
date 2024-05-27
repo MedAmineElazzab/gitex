@@ -45,27 +45,27 @@ export default class Example extends PureComponent<ExampleProps> {
           <Tooltip
             cursor={{ fill: "transparent" }}
             contentStyle={{
-              background: "fff",
+              background: color,
               border: "none",
               borderRadius: "5px",
 
               boxShadow: "4px 4px 4px 4px rgba(0, 0, 0, 0.25)",
               fontSize: "10px",
-              paddingLeft: "10px",
-              paddingRight: "10px",
+              paddingLeft: "30px",
+              paddingRight: "30px",
               paddingTop: "5px",
               paddingBottom: "3px",
             }}
             labelStyle={{
-              color: color,
-              fontSize: "6px",
-              lineHeight: "6px",
+              color: "#fff",
+              fontSize: "8px",
+              lineHeight: "8px",
               fontWeight: 300,
             }}
             itemStyle={{
-              color: color,
-              fontSize: "6px",
-              lineHeight: "6px",
+              color: "#fff",
+              fontSize: "8px",
+              lineHeight: "8px",
               fontWeight: 500,
             }}
             wrapperStyle={{

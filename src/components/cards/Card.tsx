@@ -28,9 +28,9 @@ const SensorCard: React.FC<SensorCardProps> = ({
   return (
     <div className={cardClasses}>
       <div className="grid grid-cols-3 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 gap-6 justify-items-stretch w-full items-center">
-        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-auto xl:col-span-1">
+        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-auto xl:col-span-1  border-t-2 border-t-[#000] border-b-2 border-b-[#2A2932] ">
           <Icon
-            className="mx-auto mt-4 w-10 h-10"
+            className="mx-auto mt-3 w-10 h-10"
             style={{ color: iconColor }}
           />
         </div>

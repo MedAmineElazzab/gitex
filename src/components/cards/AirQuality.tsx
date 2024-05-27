@@ -35,8 +35,8 @@ const AirQuality: React.FC<AirCardProps> = ({
   const Icon = icon;
   return (
     <div className="flex flex-col bg-[#1E1D2A] h-[325px] rounded-2xl w-full p-4">
-      <div className="flex justify-start items-center h-[30%]">
-        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-span-1 ">
+      <div className="flex justify-start items-center h-[30%] gap-5">
+        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-auto xl:col-span-1  border-t-2 border-t-[#000] border-b-2 border-b-[#2A2932] ">
           <Icon
             className="mx-auto mt-4 w-10 h-10 shadow-black rounded-full
           "

@@ -40,7 +40,7 @@ const Proximity: React.FC<ProximityCardProps> = ({
       className={`flex flex-col bg-[#1E1D2A] h-[325px] rounded-2xl w-full p-4 ${className}`}
     >
       <div className="grid grid-cols-4 gap-2 justify-items-center w-full items-center h-[40%]">
-        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-span-1 flex">
+        <div className="bg-[#1E1D2A] size-[70px] rounded-full col-auto xl:col-span-1  border-t-2 border-t-[#000] border-b-2 border-b-[#2A2932] ">
           <Icon
             className="mx-auto mt-4 w-10 h-10 shadow-black shadow-lg rounded-full"
             style={{ color: iconColor }}
