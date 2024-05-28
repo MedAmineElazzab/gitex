@@ -1,18 +1,18 @@
 import React from "react";
-import Progress from "./Progress";
 import { IconType } from "react-icons";
 import { EnumUnit } from "../../enum";
+import Progress from "./Progress";
 
 interface AirCardProps {
-  title?: string;
-  icon?: IconType | any;
-  time?: string;
-  number?: number;
-  name?: string;
+  title: string;
+  icon: IconType ;
+  time: string;
+  number: number;
+  name: string;
   unit: EnumUnit;
-  quality?: string;
-  time1?: string;
-  number1?: number;
+  quality: string;
+  time1: string;
+  number1: number;
   BgColor: string;
   ProgressColor: string;
   iconColor: string;

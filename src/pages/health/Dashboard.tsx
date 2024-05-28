@@ -158,7 +158,6 @@ const Dashboard: React.FC = () => {
         </div>
 
         <div className="grid grid-rows-3 col-auto xl:col-span-3 w-full gap-5">
-          
           <div className="grid xl:row-span-1 row-auto">
             <Health
               description={healty[0].description}
@@ -171,7 +170,6 @@ const Dashboard: React.FC = () => {
           </div>
 
           <div className="grid xl:grid-cols-3 col-auto  row-auto xl:row-span-2 gap-x-5 justify-items-stretch">
-           
             <div className="grid xl:col-span-2 col col-auto bg-[#252736] rounded-xl ">
               <LineChart
                 height={370}
@@ -210,7 +208,6 @@ const Dashboard: React.FC = () => {
               ))}
             </div>
           </div>
-
         </div>
       </div>
       <div className="grid grid-cols-1 w-full xl:grid-cols-4 md:grid-cols-2 mt-4 lg:grid-cols-2 gap-5 justify-items-center bg-[#252736] p-5 rounded-lg">

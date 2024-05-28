@@ -16,11 +16,11 @@ import SensorsIndustry from "./pages/industry/Sensors";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/app",
     element: <App />,
   },
   {
-    path: "/administration",
+    path: "/",
     element: <DashboardAdmin />,
     children: [
       {

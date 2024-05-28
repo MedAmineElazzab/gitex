@@ -1,7 +1,6 @@
 import React from "react";
 import { AiOutlineInfo } from "react-icons/ai";
-import { FaRegDotCircle } from "react-icons/fa";
-import { RiWaterPercentLine } from "react-icons/ri";
+import { HiLightBulb } from "react-icons/hi";
 import { LuRadar } from "react-icons/lu";
 import {
   MdAir,
@@ -9,23 +8,20 @@ import {
   MdOutlineArrowDropUp,
   MdOutlineCo2,
   MdOutlineShowChart,
-  MdSensors,
 } from "react-icons/md";
 import { PiDotsThreeBold } from "react-icons/pi";
+import { TbAffiliate } from "react-icons/tb";
 import { WiHumidity } from "react-icons/wi";
+import AdminSvg from "../../assets/img/administration.png";
 import AirQuality from "../../components/cards/AirQuality";
 import SensorCard from "../../components/cards/Card";
 import CoSensor from "../../components/cards/CoSensor";
+import Health from "../../components/cards/Health";
 import Proximity from "../../components/cards/Proximity";
 import Sensor from "../../components/cards/Sensor";
 import Zone from "../../components/cards/Zone";
 import LineChart from "../../components/charts/LineChart";
 import { EnumUnit } from "../../enum";
-import Health from "../../components/cards/Health";
-import HealthSvg from "../../assets/img/health.png";
-import AdminSvg from "../../assets/img/administration.png";
-import { HiLightBulb } from "react-icons/hi";
-import { TbAffiliate } from "react-icons/tb";
 
 const sensors = [
   {

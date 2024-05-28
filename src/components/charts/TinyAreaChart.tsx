@@ -1,5 +1,5 @@
-import React, { PureComponent } from "react";
-import { AreaChart, Area, ResponsiveContainer } from "recharts";
+import { PureComponent } from "react";
+import { Area, AreaChart, ResponsiveContainer } from "recharts";
 
 const data = [
   {
@@ -52,7 +52,6 @@ interface ExampleProps {
 }
 
 export default class Example extends PureComponent<ExampleProps> {
-
   static defaultProps = {
     strokeColor: "#01B574",
     fillColor: "#01B574",

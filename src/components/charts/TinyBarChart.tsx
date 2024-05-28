@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
-  BarChart,
   Bar,
-  ResponsiveContainer,
+  BarChart,
   Cell,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
 } from "recharts";
